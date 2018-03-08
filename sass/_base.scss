@@ -1,9 +1,15 @@
 :root {
-  --color-primary: #eb2f64;
-  --color-primary-light: #FF3366;
-  --color-primary-dark: #BA265D;
+  --color-grey-1: #f1f1f1;
+  --color-grey-2: #f3f3f3;
+  --color-grey-3: #a5a5a5;
+  --color-grey-4: #78777c;
+  --color-grey-5: #3f4044;
 
-  --color-grey-light-1: #f1f1f1;
+  --color-blue: #017be8;
+
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .1);
 }
 
 /* RESET */
@@ -27,5 +33,5 @@ body {
   font-weight: 400;
   line-height: 1.6;
   min-height: 100vh;
-  background-color: var(--color-grey-light-1);
+  background-color: var(--color-grey-1);
 }
