@@ -206,6 +206,7 @@
     text-decoration: none;
     width: calc((100% - 1.6px) / 5 - .8rem);
     margin-right: .8rem;
+    border-radius: 2px;
     &:nth-of-type(5n) {
       margin-right: 0;
     }
