@@ -12,6 +12,14 @@
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .1);
 }
 
+/* BREAKPOINTS */
+$bp-largest: 75em; // 1200px / 16 == 75
+$bp-large: 68.75em; // 1100px / 16 == 68.75
+$bp-medium: 56.25em; // 900px / 16 == 56.25
+$bp-small: 37.5em; // 600px / 16 == 37.25
+$bp-smallest: 31.5em; // 500px / 16 == 31.25
+
+
 /* RESET */
 * {
   margin: 0;
@@ -26,6 +34,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1 rem === 10px
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
 }
 
 body {

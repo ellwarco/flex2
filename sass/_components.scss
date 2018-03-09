@@ -1,7 +1,6 @@
 ///////////////////////////////////////////////////
 // LOGO
 .logo {
-  height: 100%;
   flex: 0 0 22.5rem;
   background-color: var(--color-blue);
   display: flex;
@@ -9,6 +8,9 @@
   align-items: center;
   font-size: 2rem;
   font-weight: 600;
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 15rem;
+  }
 
   &:link,
   &:visited {
@@ -24,6 +26,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: #fff;
+  }
 
   &__input {
     font-family: inherit;
@@ -96,11 +103,21 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 2rem;
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
 
   &__item {
     position: relative;
     &:not(:last-child) {
       margin-bottom: .5rem;
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
+    }
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
     }
   }
   &__item:before {
@@ -125,15 +142,26 @@
   &__link:visited {
     color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
     padding: 1.5rem 3rem;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 10;
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
   }
   &__icon-wrapper {
     margin-right: 2rem;
+    font-size: 2rem;
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -144,4 +172,104 @@
   text-align: center;
   padding: 2.5rem;
   color: #fff;
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
+}
+
+///////////////////////////////////////////////////
+// HEADING
+.heading__primary {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--color-grey-4);
+
+  &:after {
+    display: block;
+    height: 2px;
+    background-color: var(--color-grey-2);
+    content: "";
+    width: 100%;
+    margin: 1rem auto 3rem auto;
+  }
+}
+
+///////////////////////////////////////////////////
+// GALLERY
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    display: inline-block;
+    padding: .8rem;
+    margin-bottom: .8rem;
+    text-decoration: none;
+    width: calc((100% - 1.6px) / 5 - .8rem);
+    margin-right: .8rem;
+    &:nth-of-type(5n) {
+      margin-right: 0;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      width: calc((100% - 1.6px) / 4 - .8rem);
+      &:nth-of-type(4n) {
+        margin-right: 0;
+      }
+      &:nth-of-type(5n) {
+        margin-right: .8rem;
+      }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: calc((100% - 1.6px) / 3 - .8rem);
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+      &:nth-of-type(5n) {
+        margin-right: .8rem;
+      }
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: calc((100% - 1.6px) / 2 - .8rem);
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+      &:nth-of-type(5n) {
+        margin-right: .8rem;
+      }
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      margin-right: 0;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: var(--color-grey-2);
+    }
+  }
+
+  &__figure {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  &__image-caption {
+    margin-top: 1.5rem;
+    color: var(--color-grey-5)
+  }
+  &__image-author {
+    display: block;
+    margin-top: .8rem;
+    color: var(--color-grey-4)
+  }
+
+  &__image {
+    border: none;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    background-color: var(--color-grey-2);
+  }
 }
